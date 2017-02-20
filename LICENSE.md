@@ -1,6 +1,8 @@
 BSD 3-Clause License
 
-Copyright (c) 2017, CESR
+Copyright (c) 2017, The Regents of the University of California and the International
+Computer Science Institute
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
