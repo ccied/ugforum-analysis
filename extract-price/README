@@ -1,0 +1,12 @@
+Instructions for running the code.
+
+
+Prerequisites: 
+Required libraries, version of Java/python, ..
+
+sample-data: 
+Contains a small example dataset to run the code.
+
+Instructions for building dataset that the code expects.
+
+command: command to run the code
