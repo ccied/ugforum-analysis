@@ -1,0 +1,15 @@
+Author: Rebecca Sorla Portnoff (https://www.linkedin.com/in/rebecca-portnoff-3b784039/)
+
+Training/testing data and ground truth can be found in sample-data. Ground truth filename is:
+
+all_threads_final2_edit
+
+If running in eclipse, to recreate my results use the arguments:
+
+same /path_to_folder/DarkodeNulled /path_to_folder/DarkodeNulled/all_threads_final2_edit 0.2 buy:sell:neither:curr false
+
+If running from the command line, to recreate my results use the arguments:
+
+java -Xmx2g -cp .:./lib/liblinear-1.94.jar main/MainLibLinear same same /path_to_folder/DarkodeNulled /path_to_folder/DarkodeNulled/all_threads_final2_edit 0.2 buy:sell:neither:curr false
+
+Make sure lib, math, resources and util from english directory are present in code directory
