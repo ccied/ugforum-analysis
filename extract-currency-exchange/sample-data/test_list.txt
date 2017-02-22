@@ -1,0 +1,10 @@
+raw/0-initiator3847826.txt.tok	annotated/0-initiator3847826.txt.tok
+raw/0-initiator3849022.txt.tok	annotated/0-initiator3849022.txt.tok
+raw/0-initiator3877931.txt.tok	annotated/0-initiator3877931.txt.tok
+raw/0-initiator3892224.txt.tok	annotated/0-initiator3892224.txt.tok
+raw/0-initiator3894293.txt.tok	annotated/0-initiator3894293.txt.tok
+raw/0-initiator3909184.txt.tok	annotated/0-initiator3909184.txt.tok
+raw/0-initiator3915175.txt.tok	annotated/0-initiator3915175.txt.tok
+raw/0-initiator3960414.txt.tok	annotated/0-initiator3960414.txt.tok
+raw/0-initiator3986072.txt.tok	annotated/0-initiator3986072.txt.tok
+raw/0-initiator3988646.txt.tok	annotated/0-initiator3988646.txt.tok

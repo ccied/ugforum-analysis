@@ -1,0 +1,39 @@
+extract-currency-exchange
+
+  This contains several systems for extracting information from currency exchange
+  posts. The target information is:
+
+  - The cash format / currency being provided
+  - The cash format / currency being requested
+  - The amount provided
+  - The amount requested
+  - The rate
+
+  Posts can contain one or more instances of any of these fields.
+
+Prerequisites: 
+  All of this code is written in python and should work with either 2.7+ or 3.3+.
+
+Running Python 3:
+  To see all arguments run:
+  
+  python3 ./code/main.py --help
+
+  From within the sample-data folder, train, save, evaluate, and apply classifier model:
+  python3 ../code/main.py --train_data train_list.txt --eval_data dev_list.txt --run_data test_list.txt --output_prefix sample --train_model classifier --save_prefix sample
+
+  From within the sample-data folder, load the model and evaluate + run again:
+  python3 ../code/main.py --eval_data dev_list.txt --run_data test_list.txt --output_prefix sample2 --load_model sample.Classifier_Extractor
+
+
+Running Python 2.7+ (only change is which interpreter is used, the code is the same):
+  To see all arguments run:
+  
+  python2 ./code/main.py --help
+
+  From within the sample-data folder, train, save, evaluate, and apply classifier model:
+  python2 ../code/main.py --train_data train_list.txt --eval_data dev_list.txt --run_data test_list.txt --output_prefix sample --train_model classifier --save_prefix sample
+
+  From within the sample-data folder, load the model and evaluate + run again:
+  python2 ../code/main.py --eval_data dev_list.txt --run_data test_list.txt --output_prefix sample2 --load_model sample.Classifier_Extractor
+
