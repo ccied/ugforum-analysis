@@ -1,0 +1,30 @@
+1	Clash	_	_	NN	_	0	root	_	_
+2	of	_	_	IN	_	1	prep	_	_
+3	clan	_	_	NN	_	4	nn	_	_
+4	bot	_	_	NN	_	2	pobj	_	_
+
+1	Hi	_	_	NN	_	0	root	_	_
+2	,	_	_	,	_	1	punct	_	_
+
+1	i	_	_	LS	_	2	nsubj	_	_
+2	want	_	_	VBP	_	0	root	_	_
+3	to	_	_	TO	_	4	aux	_	_
+4	know	_	_	VB	_	2	xcomp	_	_
+5	which	_	_	WDT	_	9	mark	_	_
+6	bot	_	_	NN	_	9	nsubj	_	_
+7	is	_	_	VBZ	_	9	cop	_	_
+8	the	_	_	DT	_	9	det	_	_
+9	best	_	_	JJS	_	4	ccomp	_	_
+10	-LRB-	_	_	-LRB-	_	11	punct	_	_
+11	searching	_	_	VBG	_	9	dep	_	_
+12	for	_	_	IN	_	11	prep	_	_
+13	a	_	_	DT	_	17	det	_	_
+14	free	_	_	JJ	_	17	amod	_	_
+15	or	_	_	CC	_	14	cc	_	_
+16	cracked	_	_	VBN	_	14	conj	_	_
+17	bot	_	_	NN	_	12	pobj	_	_
+18	-RRB-	_	_	-RRB-	_	2	punct	_	_
+
+1	thank	_	_	VB	_	0	root	_	_
+2	you	_	_	PRP	_	1	dobj	_	_
+

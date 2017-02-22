@@ -1,0 +1,67 @@
+extract-product
+
+This system identifies products being bought and sold in forum posts.
+It has several modes of operation, but most commonly identifies one
+most prominent poduct in a given post, represented by choosing a particular
+word or noun phrase from that post.
+
+
+Prerequisites:
+
+This project is written primarily in Scala. The easiest way to build it is with SBT:
+https://github.com/harrah/xsbt/wiki/Getting-Started-Setup
+
+Run
+sbt assembly
+
+which will compile everything and build a runnable jar.
+
+You can also import the project into Eclipse and use the Scala IDE plug-in for Eclipse http://scala-ide.org
+Or you can use IntelliJ, which has support for importing projects based on build.sbt
+
+
+
+Preprocessing data
+
+The product extraction system operates on data that has been tokenized, part-of-speech tagged, and dependency
+parsed. To turn raw data into this form, use the code in the preprocessing subdirectory. First, build the
+project there with sbt assembly. Then, run.sh shows how to tokenize and parse sample files using the
+Stanford CoreNLP toolkit. This script first downloads the model files from the Stanford NLP website,
+then runs the tokenizer, then runs the parser.
+
+
+
+Running the product extractor
+
+Once you have built the project, run
+
+java -Xmx2g -cp target/scala-2.11/extract-products-assembly-1.jar edu.berkeley.forum.main.SystemRunner
+
+This runs the system on the data in ../sample-data by default and writes the results in output/. You can
+verify that these match sample-output, which contains the expected results. Three files are produced:
+
+products.csv: list of product extractions, one line per file corresponding to the product
+extracted for that file. The columns are:
+col1: file name
+col2: whole noun phrase of the extracted product
+col3: head word
+col4: canonicalized head (lowercased and stemmed)
+col5: "full semantic product" (potentially a premodifier (e.g. "malware") + canonicalized head (e.g. "installs"))
+col6: fine product category (if available)
+col7: coarse product category (if available)
+
+heads.txt: Counts of head words (column 3 of the csv)
+
+refined-heads.txt: Counts of head words with additional refinement surrounding common categories.
+
+The system is controlled with the following command-line arguments:
+
+-inputDir: A flat directory containing forum posts, one per file
+-outputDir: The directory to write output files to
+-modelPath: default is models/bothmodel-doclevel.ser.gz -- change this out if you wish to train your own model
+
+(More arguments are available; in fact, all arguments in classes with a main (SystemRunner, Trainer) are
+command-line arguments.)
+
+
+

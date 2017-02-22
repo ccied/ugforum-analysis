@@ -1,0 +1,249 @@
+1	☆	_	_	NN	_	0	root	_	_
+2	★	_	_	CD	_	6	num	_	_
+3	MASSIVE	_	_	NNP	_	6	nn	_	_
+4	SMS	_	_	NNP	_	6	nn	_	_
+5	Bombing	_	_	NNP	_	6	nn	_	_
+6	Service	_	_	NNP	_	1	dep	_	_
+7	★	_	_	CD	_	8	number	_	_
+8	☆	_	_	CD	_	6	num	_	_
+
+1	Spoiler	_	_	NN	_	0	root	_	_
+2	-LRB-	_	_	-LRB-	_	3	punct	_	_
+3	Click	_	_	VB	_	9	dep	_	_
+4	to	_	_	TO	_	3	prep	_	_
+5	View	_	_	NNP	_	4	pobj	_	_
+6	-RRB-	_	_	-RRB-	_	3	punct	_	_
+7	I	_	_	PRP	_	9	nsubj	_	_
+8	am	_	_	VBP	_	9	aux	_	_
+9	offering	_	_	VBG	_	1	dep	_	_
+10	a	_	_	DT	_	14	det	_	_
+11	simple	_	_	JJ	_	14	amod	_	_
+12	sms	_	_	NNS	_	14	nn	_	_
+13	bombing	_	_	NN	_	14	nn	_	_
+14	service	_	_	NN	_	9	dobj	_	_
+15	,	_	_	,	_	1	punct	_	_
+16	All	_	_	DT	_	22	nsubj	_	_
+17	you	_	_	PRP	_	18	nsubj	_	_
+18	have	_	_	VBP	_	16	rcmod	_	_
+19	to	_	_	TO	_	20	aux	_	_
+20	do	_	_	VB	_	18	xcomp	_	_
+21	is	_	_	VBZ	_	22	aux	_	_
+22	pay	_	_	VB	_	1	dep	_	_
+23	me	_	_	PRP	_	22	dobj	_	_
+24	for	_	_	IN	_	22	prep	_	_
+25	amount	_	_	NN	_	24	pobj	_	_
+26	of	_	_	IN	_	25	prep	_	_
+27	texts	_	_	NNS	_	26	pobj	_	_
+28	you	_	_	PRP	_	29	nsubj	_	_
+29	want	_	_	VBP	_	27	rcmod	_	_
+30	.	_	_	.	_	1	punct	_	_
+
+1	Give	_	_	VB	_	0	root	_	_
+2	me	_	_	PRP	_	1	iobj	_	_
+3	information	_	_	NN	_	1	dobj	_	_
+4	such	_	_	JJ	_	5	mwe	_	_
+5	as	_	_	IN	_	3	prep	_	_
+6	phone	_	_	NN	_	7	nn	_	_
+7	number	_	_	NN	_	5	pobj	_	_
+8	,	_	_	,	_	7	punct	_	_
+9	country	_	_	NN	_	7	conj	_	_
+10	,	_	_	,	_	7	punct	_	_
+11	&	_	_	CC	_	7	cc	_	_
+12	the	_	_	DT	_	16	det	_	_
+13	4	_	_	CD	_	16	num	_	_
+14	digit	_	_	NN	_	16	nn	_	_
+15	area	_	_	NN	_	16	nn	_	_
+16	code	_	_	NN	_	7	conj	_	_
+17	in	_	_	IN	_	16	prep	_	_
+18	front	_	_	NN	_	17	pobj	_	_
+19	of	_	_	IN	_	18	prep	_	_
+20	the	_	_	DT	_	21	det	_	_
+21	number	_	_	NN	_	19	pobj	_	_
+22	.	_	_	.	_	1	punct	_	_
+
+1	After	_	_	IN	_	0	root	_	_
+2	paying	_	_	VBG	_	1	pcomp	_	_
+3	I	_	_	PRP	_	5	nsubj	_	_
+4	will	_	_	MD	_	5	aux	_	_
+5	bomb	_	_	VB	_	2	ccomp	_	_
+6	the	_	_	DT	_	7	det	_	_
+7	phone	_	_	NN	_	5	dobj	_	_
+8	with	_	_	IN	_	5	prep	_	_
+9	in	_	_	IN	_	8	pcomp	_	_
+10	24	_	_	CD	_	11	num	_	_
+11	hours	_	_	NNS	_	9	pobj	_	_
+12	.	_	_	.	_	1	punct	_	_
+
+1	If	_	_	IN	_	4	mark	_	_
+2	you	_	_	PRP	_	4	nsubj	_	_
+3	are	_	_	VBP	_	4	cop	_	_
+4	un	_	_	JJ	_	0	root	_	_
+5	satisfied	_	_	JJ	_	4	amod	_	_
+6	with	_	_	IN	_	5	prep	_	_
+7	my	_	_	PRP$	_	8	poss	_	_
+8	service	_	_	NN	_	6	pobj	_	_
+9	its	_	_	PRP$	_	8	dep	_	_
+10	as	_	_	IN	_	9	prep	_	_
+11	easy	_	_	JJ	_	10	pobj	_	_
+12	as	_	_	IN	_	11	prep	_	_
+13	telling	_	_	VBG	_	12	pcomp	_	_
+14	me	_	_	PRP	_	13	dobj	_	_
+15	why	_	_	WRB	_	13	dep	_	_
+16	and	_	_	CC	_	15	cc	_	_
+17	I	_	_	PRP	_	20	nsubj	_	_
+18	will	_	_	MD	_	20	aux	_	_
+19	gladly	_	_	RB	_	20	advmod	_	_
+20	refund	_	_	VB	_	15	conj	_	_
+21	your	_	_	PRP$	_	22	poss	_	_
+22	money	_	_	NN	_	20	dobj	_	_
+23	back	_	_	RB	_	20	advmod	_	_
+24	!	_	_	.	_	4	punct	_	_
+
+1	This	_	_	DT	_	2	det	_	_
+2	service	_	_	NN	_	4	nsubjpass	_	_
+3	is	_	_	VBZ	_	4	auxpass	_	_
+4	done	_	_	VBN	_	0	root	_	_
+5	with	_	_	IN	_	4	prep	_	_
+6	multiple	_	_	JJ	_	10	amod	_	_
+7	private	_	_	JJ	_	10	amod	_	_
+8	SMS	_	_	NNP	_	10	nn	_	_
+9	Bombing	_	_	NN	_	10	nn	_	_
+10	tools	_	_	NNS	_	5	pobj	_	_
+11	which	_	_	WDT	_	12	nsubj	_	_
+12	guarantee	_	_	VBP	_	10	rcmod	_	_
+13	's	_	_	POS	_	17	cop	_	_
+14	more	_	_	JJR	_	17	amod	_	_
+15	then	_	_	RB	_	17	advmod	_	_
+16	the	_	_	DT	_	17	det	_	_
+17	number	_	_	NN	_	12	dobj	_	_
+18	of	_	_	IN	_	17	prep	_	_
+19	texts	_	_	NNS	_	18	pobj	_	_
+20	you	_	_	PRP	_	21	nsubj	_	_
+21	pay	_	_	VBP	_	19	rcmod	_	_
+22	for	_	_	IN	_	21	prep	_	_
+23	.	_	_	.	_	4	punct	_	_
+
+1	Spoiler	_	_	NN	_	0	root	_	_
+2	-LRB-	_	_	-LRB-	_	3	punct	_	_
+3	Click	_	_	VB	_	1	dep	_	_
+4	to	_	_	TO	_	3	prep	_	_
+5	View	_	_	NNP	_	4	pobj	_	_
+6	-RRB-	_	_	-RRB-	_	3	punct	_	_
+
+1	*	_	_	SYM	_	5	dep	_	_
+2	1000	_	_	CD	_	5	number	_	_
+3	-	_	_	:	_	2	punct	_	_
+4	$	_	_	$	_	2	dep	_	_
+5	1.00	_	_	CD	_	0	root	_	_
+
+1	*	_	_	SYM	_	5	dep	_	_
+2	5000	_	_	CD	_	5	number	_	_
+3	-	_	_	:	_	2	punct	_	_
+4	$	_	_	$	_	2	dep	_	_
+5	3.00	_	_	CD	_	0	root	_	_
+
+1	*	_	_	SYM	_	5	dep	_	_
+2	10,000	_	_	CD	_	5	number	_	_
+3	-	_	_	:	_	2	punct	_	_
+4	$	_	_	$	_	2	dep	_	_
+5	5.00	_	_	CD	_	0	root	_	_
+
+1	Thease	_	_	NNP	_	9	nsubj	_	_
+2	are	_	_	VBP	_	9	aux	_	_
+3	the	_	_	DT	_	5	det	_	_
+4	only	_	_	JJ	_	5	amod	_	_
+5	amount	_	_	NN	_	7	poss	_	_
+6	's	_	_	POS	_	5	possessive	_	_
+7	I	_	_	PRP	_	9	nsubj	_	_
+8	will	_	_	MD	_	9	aux	_	_
+9	do	_	_	VB	_	0	root	_	_
+10	at	_	_	IN	_	9	prep	_	_
+11	a	_	_	DT	_	12	det	_	_
+12	time	_	_	NN	_	10	pobj	_	_
+13	and	_	_	CC	_	9	cc	_	_
+14	I	_	_	PRP	_	16	nsubj	_	_
+15	only	_	_	RB	_	16	advmod	_	_
+16	accept	_	_	VBP	_	9	conj	_	_
+17	LR	_	_	NNP	_	16	dobj	_	_
+18	,	_	_	,	_	16	punct	_	_
+19	If	_	_	IN	_	21	mark	_	_
+20	you	_	_	PRP	_	21	nsubj	_	_
+21	purchase	_	_	VB	_	16	advcl	_	_
+22	this	_	_	DT	_	23	det	_	_
+23	service	_	_	NN	_	21	dobj	_	_
+24	and	_	_	CC	_	21	cc	_	_
+25	are	_	_	VBP	_	27	cop	_	_
+26	un	_	_	JJ	_	27	amod	_	_
+27	satisfied	_	_	JJ	_	21	conj	_	_
+28	I	_	_	PRP	_	30	nsubj	_	_
+29	will	_	_	MD	_	30	aux	_	_
+30	refund	_	_	VB	_	27	ccomp	_	_
+31	you	_	_	PRP	_	30	dobj	_	_
+32	.	_	_	.	_	9	punct	_	_
+
+1	*	_	_	SYM	_	0	root	_	_
+2	If	_	_	IN	_	5	mark	_	_
+3	Your	_	_	PRP$	_	4	poss	_	_
+4	Country	_	_	NN	_	5	nsubj	_	_
+5	Is	_	_	VBZ	_	1	advcl	_	_
+6	Not	_	_	RB	_	7	neg	_	_
+7	Mentioned	_	_	VBN	_	9	nsubj	_	_
+8	Below	_	_	IN	_	9	amod	_	_
+9	Contact	_	_	NN	_	5	ccomp	_	_
+10	Me	_	_	PRP	_	9	dobj	_	_
+
+1	*	_	_	SYM	_	2	amod	_	_
+2	Country	_	_	NN	_	0	root	_	_
+3	's	_	_	POS	_	2	possessive	_	_
+4	I	_	_	PRP	_	2	dep	_	_
+5	Am	_	_	VBP	_	4	dep	_	_
+6	100	_	_	CD	_	7	num	_	_
+7	%	_	_	NN	_	5	dep	_	_
+8	I	_	_	PRP	_	10	nsubj	_	_
+9	Can	_	_	MD	_	10	aux	_	_
+10	Bomb	_	_	NN	_	7	rcmod	_	_
+
+1	Spoiler	_	_	NN	_	0	root	_	_
+2	-LRB-	_	_	-LRB-	_	3	punct	_	_
+3	Click	_	_	VB	_	1	dep	_	_
+4	to	_	_	TO	_	3	prep	_	_
+5	View	_	_	NNP	_	4	pobj	_	_
+6	-RRB-	_	_	-RRB-	_	3	punct	_	_
+
+1	United	_	_	NNP	_	2	nn	_	_
+2	States	_	_	NNPS	_	0	root	_	_
+
+1	United	_	_	NNP	_	2	nn	_	_
+2	Kingdom	_	_	NNP	_	0	root	_	_
+
+1	India	_	_	NNP	_	0	root	_	_
+
+1	Ireland	_	_	NNP	_	0	root	_	_
+
+1	Canada	_	_	NNP	_	0	root	_	_
+
+1	Germany	_	_	NNP	_	0	root	_	_
+
+1	Austria	_	_	NNP	_	0	root	_	_
+
+1	Australia	_	_	NNP	_	0	root	_	_
+
+1	*	_	_	SYM	_	7	dep	_	_
+2	Country	_	_	NN	_	4	poss	_	_
+3	's	_	_	POS	_	2	possessive	_	_
+4	I	_	_	PRP	_	7	nsubj	_	_
+5	Can	_	_	MD	_	7	aux	_	_
+6	Not	_	_	RB	_	7	neg	_	_
+7	Bomb	_	_	NN	_	0	root	_	_
+8	.	_	_	.	_	7	punct	_	_
+
+1	Spoiler	_	_	NN	_	7	nn	_	_
+2	-LRB-	_	_	-LRB-	_	3	punct	_	_
+3	Click	_	_	VB	_	1	dep	_	_
+4	to	_	_	TO	_	3	prep	_	_
+5	View	_	_	NNP	_	4	pobj	_	_
+6	-RRB-	_	_	-RRB-	_	3	punct	_	_
+7	Isreal	_	_	NNP	_	0	root	_	_
+
+1	Belgium	_	_	NNP	_	0	root	_	_
+
