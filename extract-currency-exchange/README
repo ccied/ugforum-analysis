@@ -1,4 +1,5 @@
 extract-currency-exchange
+Author: Jonathan Kummerfeld (http://www.jkk.name/)
 
   This contains several systems for extracting information from currency exchange
   posts. The target information is:
