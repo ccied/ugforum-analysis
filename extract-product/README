@@ -1,4 +1,5 @@
 extract-product
+Author: Greg Durrett (http://www.cs.utexas.edu/~gdurrett/)
 
 This system identifies products being bought and sold in forum posts.
 It has several modes of operation, but most commonly identifies one
