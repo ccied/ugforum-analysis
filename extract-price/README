@@ -6,7 +6,13 @@ Instructions for running the code.
 
 
 Prerequisites: 
-Required libraries, version of Java/python, ..
+This project is written primarily in Scala. The easiest way to build it is with SBT:
+http://www.scala-sbt.org/release/docs/Setup.html
+
+If you are using Mac:
+ brew install sbt
+
+
 
 sample-data: 
 Contains a small example dataset to run the code.
