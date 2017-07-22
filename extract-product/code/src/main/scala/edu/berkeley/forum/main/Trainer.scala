@@ -1,13 +1,11 @@
 package edu.berkeley.forum.main
 
 import java.util.Calendar
-
 import scala.collection.JavaConverters.asScalaBufferConverter
 import scala.collection.JavaConverters.asScalaSetConverter
 import scala.collection.JavaConverters.bufferAsJavaListConverter
 import scala.collection.JavaConverters.seqAsJavaListConverter
 import scala.collection.mutable.ArrayBuffer
-
 import edu.berkeley.forum.data.Dataset
 import edu.berkeley.forum.data.Dataset.LabeledDocument
 import edu.berkeley.forum.data.LabeledNPDocument
@@ -46,6 +44,9 @@ import edu.berkeley.forum.model.ProductFeaturizer
 import edu.berkeley.forum.model.ProductNPComputer
 import edu.berkeley.forum.model.ProductNPPredictor
 import edu.berkeley.forum.model.ProductPredictor
+import edu.berkeley.forum.data.ConllFormatDocumentWriter
+import java.io.PrintWriter
+import java.io.File
 
 object Trainer {
 
@@ -133,6 +134,9 @@ object Trainer {
   // Path to write trained model to; null if we shouldn't bother saving the model
   val modelPath = ""
   
+  // Path to write output to in CoNLL format
+  val conllOutputPath = ""
+  
   // Restricts the classifier to only look at the token under consideration
   val restrictToCurrent = false
   // Prevents the classifier from looking at the token under consideration
@@ -166,6 +170,8 @@ object Trainer {
     
     val blackhatTestRaw = ForumDatasets.loadBlackhatTest(dataReleasePath, filePrefix, fileSuffix)
     
+    val nulledTestRaw = ForumDatasets.loadNulledTest(dataReleasePath, filePrefix, fileSuffix)
+    
     val (darkodeTrain, darkodeTest) = if (runOnTest) {
       (dataset.train.asScala ++ dataset.dev.asScala, dataset.test.asScala)
     } else {
@@ -190,7 +196,7 @@ object Trainer {
 //      trainSystemDoErrorAnalysis(hfTrain.asScala.slice(0, 100), hfTest.asScala, None, None)
       domainAdaptationExperiment(dataset.train.asScala, hfTrain.asScala, darkodeTest, hfTest.asScala)
     } else if (trainOnHackforum) {
-      trainSystemDoErrorAnalysis(hfTrain.asScala, hfTest.asScala, Some(darkodeTrain), Seq(darkodeTest, blackhatTestRaw))
+      trainSystemDoErrorAnalysis(hfTrain.asScala, hfTest.asScala, Some(darkodeTrain), Seq(darkodeTest, blackhatTestRaw, nulledTestRaw))
     } else if (trainOnBothTestOnBoth) {
 //      trainSystemDoErrorAnalysis(hfTrain.asScala ++ dataset.train.asScala, hfTest.asScala ++ dataset.dev.asScala, None, None)
       Logger.logss("DARKODE EVAL")
@@ -204,7 +210,7 @@ object Trainer {
       val tokenSystem = trainTokenSystem(darkodeTrain, darkodeTest)
       compareAndAnalyze(dataset, tokenSystem, npSystem)
     } else {
-      trainSystemDoErrorAnalysis(darkodeTrain, darkodeTest, Some(hfTrain.asScala), Seq(hfTest.asScala, blackhatTestRaw))
+      trainSystemDoErrorAnalysis(darkodeTrain, darkodeTest, Some(hfTrain.asScala), Seq(hfTest.asScala, blackhatTestRaw, nulledTestRaw))
     }
     LightRunner.finalizeOutput()
   }
@@ -688,6 +694,9 @@ object Trainer {
   
   def evaluateTokenLevel(model: Model, dev: Seq[LabeledDocument], writeOutputForSig: Boolean) {
     val predictions = dev.map(doc => model.predict(doc.document))
+    if (conllOutputPath != "") {
+      ConllFormatDocumentWriter.writeLabeledDocuments(predictions, dev, new PrintWriter(new File(conllOutputPath + "-" + dev.headOption.map(_.document.forumName).getOrElse(""))))
+    }
     val devEval = ModelUtils.evaluateTokenLevel(dev, predictions, writeOutputForSig)
     Logger.logss("TOKEN LEVEL RESULTS: dev: (" + dev.size + " docs, " + dev.map(_.positiveLabels.size).foldLeft(0)(_ + _) + " products) => " + devEval);
     val (devDocumentLevelEval, devDocumentLevelEvalStr) = ModelUtils.evaluateDocumentLevel(dev, predictions, writeOutputForSig);

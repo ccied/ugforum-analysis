@@ -276,27 +276,18 @@ object NPDocument {
     val positiveLabels = labeledDoc.positiveLabels.asScala
     val npLabels = new ArrayBuffer[Array[Boolean]]
     val npLabelCounts = new ArrayBuffer[Array[Int]]
-//    val npLabels = Array.tabulate(nps.size)(sentIdx => {
     for (sentIdx <- 0 until nps.size) {
-      val thisSentNpLabels = new ArrayBuffer[Boolean]
-      val thisSentNpLabelCounts = new ArrayBuffer[Int]
-      for (i <- 0 until nps(sentIdx).size) {
-        val np = nps(sentIdx)(i)
-        val matchingLabels = positiveLabels.filter(sentAndPosn => sentAndPosn.getFirst.intValue == sentIdx && np._1 <= sentAndPosn.getSecond.intValue  && sentAndPosn.getSecond.intValue < np._3)
-        val isConventionalGold = matchingLabels.size > 0
-        if (useNpLevelVoting) {
-          val allMatchingKeys = labeledDoc.rawPositiveLabelCounts.keySet.asScala.filter(sentAndPosn => sentAndPosn.getFirst.intValue == sentIdx && np._1 <= sentAndPosn.getSecond.intValue  && sentAndPosn.getSecond.intValue < np._3)
-//          if (allMatchingKeys.size > 0) {
-//            Logger.logss("MATCHING KEYS: " + allMatchingKeys + ", counts = " + allMatchingKeys.map(labeledDoc.rawPositiveLabelCounts.getCount(_)))
-//          }
-          var totalCount = allMatchingKeys.toSeq.map(labeledDoc.rawPositiveLabelCounts.getCount(_).toInt).foldLeft(0)(_ + _)
-          thisSentNpLabels += totalCount >= 2
-          thisSentNpLabelCounts += totalCount
-        } else {
-          thisSentNpLabels += isConventionalGold
+      require(!useNpLevelVoting, "NP-level voting is no longer implemented")
+      val thisSentNpPositiveIndices = new ArrayBuffer[Int]
+      for (positiveIndexThisSentence <- positiveLabels.filter(sentAndPosn => sentAndPosn.getFirst.intValue == sentIdx).map(_.getSecond.intValue)) {
+        val maybeSmallestNp = nps(sentIdx).filter(np => np._1 <= positiveIndexThisSentence && positiveIndexThisSentence < np._3).sortBy(np => np._3 - np._1).headOption
+        for (smallestNp <- maybeSmallestNp) {
+          thisSentNpPositiveIndices += nps(sentIdx).indexOf(smallestNp)
         }
       }
+      val thisSentNpLabels = (0 until nps(sentIdx).size).map(i => thisSentNpPositiveIndices.contains(i))
       npLabels += thisSentNpLabels.toArray
+      val thisSentNpLabelCounts = new ArrayBuffer[Int]()
       npLabelCounts += thisSentNpLabelCounts.toArray
     }
     npLabels.toArray -> (if (useNpLevelVoting) Some(npLabelCounts.toArray) else None)
