@@ -65,4 +65,29 @@ The system is controlled with the following command-line arguments:
 command-line arguments.)
 
 
+Annotation format
 
+The annotation formats are unfortunately slightly inconsistent.
+
+For Darkode, Nulled, and Hell, the annotation is of the form:
+
+[file id] [annotator] [char start] [char end] ...
+
+where any fields after the first four are junk. The file id field corresponds to part of the filename
+in the data direction: "0-initiator[file id].txt.tok". The annotator field is "merged" here since
+these annotations have been pre-merged into a consensus. char start and char end reflect character
+offsets in the tokenized file.
+
+For Hackforums and Blackhat, the annotation is of the form:
+
+[file id] [annotator] [char start] { [char end] } ...
+
+The fields have the same semantics as above. Here the annotations have not been pre-merged, so the annotator
+field reflects the name of a particular annotator. For both datasets, we counted a span as a product
+if it was annotated 2 or more times, since there were 3 annotators for each document.
+
+The curly brace fields used to be informative but are now deprecated. For Hackforums, the file ids are instead
+filenames. There is no good reason for this :(
+
+edu.berkeley.forum.main.ForumDatasets and edu.berkeley.forum.data.Dataset contain the code to load these
+into Java objects.
